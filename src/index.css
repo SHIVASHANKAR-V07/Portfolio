@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-navy: #0a111f;
+    --card-oxford: #14213d;
+    --accent-gold: #c77d10;
+    --text-white: #d1d5db;
+    --text-muted: #9ca3af;
+  }
+
+  html,
+  body {
+    background-color: var(--bg-navy);
+    color: var(--text-white);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom scrollbar styling in dark oxford/gold theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a111f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14213d;
+  border-radius: 3px;
+  border: 1px solid rgba(199, 125, 16, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c77d10;
+}
+
+/* Idle floating animation for homepage artwork */
+@keyframes idleFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(0.5deg);
+  }
+}
+
+.animate-idle-float {
+  animation: idleFloat 6s ease-in-out infinite;
+}
+
+/* Subtle glow effect for gold accents */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(199, 125, 16, 0.25);
+}
+
+.gold-border-glow {
+  border-color: #c77d10;
+  box-shadow: 0 0 12px rgba(199, 125, 16, 0.3);
+}
+
+/* Glassmorphism surfaces */
+.oxford-glass {
+  background-color: rgba(20, 33, 61, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(199, 125, 16, 0.2);
+}
+
+.oxford-glass-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.oxford-glass-hover:hover {
+  background-color: rgba(20, 33, 61, 0.95);
+  border-color: rgba(199, 125, 16, 0.6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(199, 125, 16, 0.2);
+  transform: translateY(-2px);
+}
